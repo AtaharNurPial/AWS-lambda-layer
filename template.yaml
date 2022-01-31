@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  lambda layer
+
+  Sample SAM Template demonstrating lambda layer
+
+# Globals:
+#   Function:
+#     Runtime: python3.8
+#     Architectures:
+#       - x86_64
+
+Resources:
+  PythonLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: PythonLayer/
+      RetentionPolicy: Retain
+    Metadata:
+      BuildMethod: python3.8
+
+  # PythonLayerPermission:
+  #   Type: AWS::Lambda::LayerVersionPermission
+  #   Action: lambda:GetLayerVersion
+  #   LayerVersion: !Ref PythonLayer
+
+
+Outputs:
+  PythonLayerVersion:
+    Description: "Layer version for PythonLayer"
+    Value: !Ref PythonLayer
