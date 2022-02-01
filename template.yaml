@@ -20,11 +20,6 @@ Resources:
     Metadata:
       BuildMethod: python3.8
 
-  # PythonLayerPermission:
-  #   Type: AWS::Lambda::LayerVersionPermission
-  #   Action: lambda:GetLayerVersion
-  #   LayerVersion: !Ref PythonLayer
-
 
 Outputs:
   PythonLayerVersion:
